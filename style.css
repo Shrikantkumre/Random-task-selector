@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+textarea{
+    width: 80%;
+}
+.tags{
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: start;
+    width: 80%;
+}
+
+.tag{
+    background-color: orange;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+}
+
+.highlight{
+    background-color: aqua;
+}
