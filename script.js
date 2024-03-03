@@ -1,46 +1,49 @@
-const tagsContainer = document.querySelector('.tags')
 const textarea = document.querySelector('textarea')
-
-function textChange(ele) {
-    const string = ele.target.value.trim();
-    const tagItemsArray = string.split(',').filter(value => value !== '')
-
-    tagsContainer.innerHTML = '';
-
-    tagItemsArray.forEach((value) => {
-        const tagElemtent = document.createElement('div');
-        tagElemtent.classList.add('tag')
-        tagElemtent.innerText = value;
-        tagsContainer.appendChild(tagElemtent)
-    })
+const tags = document.querySelector('.tags')
 
 
-    if(ele.key == "Enter"){
+
+function displayarray(ele) {
+
+    const string = ele.target.value.trim()
+    const array = string.split(',').filter(value => value !== '')
+
+
+
+    tags.innerHTML = '';
+    array.forEach((value) => {
+        const newelement = document.createElement('div')
+        newelement.classList.add('tag')
+        newelement.innerHTML = value
+        tags.appendChild(newelement)
+    });
+
+    if (ele.key == "Enter") {
         const changeInterval = setInterval(() => {
-            const randomEle = getRandomElement();
+            const randomEle = randomElement();
             randomEle.classList.add('highlight')
 
-            setTimeout(()=>{
+
+            setTimeout(() => {
                 randomEle.classList.remove('highlight')
             }, 100)
-        }, 100);
-
+        }, 100)
         setTimeout(() => {
             clearInterval(changeInterval);
-            const randomEle = getRandomElement();
+            const randomEle = randomElement();
             randomEle.classList.add('highlight')
         }, 5000);
+
     }
-
-
-
 }
 
-textarea.addEventListener('keyup', textChange);
+textarea.addEventListener('keyup', displayarray)
 
 
-function getRandomElement(){
-    const allTags = document.querySelectorAll('.tag')
-    const randomElement = allTags[Math.round(Math.random() * allTags.length)]
-    return randomElement;
+
+function randomElement() {
+
+    const allTags = document.querySelectorAll(".tag")
+    const randomvalue = allTags[Math.round(Math.random() * allTags.length)]
+    return randomvalue
 }

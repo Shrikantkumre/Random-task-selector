@@ -1,35 +1,40 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+    margin: 0%;
+    padding: 0%;
     box-sizing: border-box;
 }
-html, body{
-    height: 100%;
-    width: 100%;
+
+body {
+    background-color: blueviolet;
     display: flex;
-    align-items: center;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+
 }
-textarea{
-    width: 80%;
+
+
+textarea {
+    margin-top: 30px;
 }
-.tags{
-    margin-top: 10px;
+
+.tags {
     display: flex;
-    flex-wrap: wrap;
     gap: 10px;
-    justify-content: start;
-    width: 80%;
 }
 
-.tag{
-    background-color: orange;
-    border-radius: 20px;
-    padding: 5px 15px;
-    font-size: 14px;
+
+
+.tag {
+    display: flex;
+    border-radius: 40%;
+    justify-content: center;
+    padding: 10px;
+    background-color: yellow;
 }
 
-.highlight{
-    background-color: aqua;
+.highlight {
+    background-color: rgb(27, 143, 35);
+
 }
